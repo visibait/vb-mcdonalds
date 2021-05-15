@@ -1,5 +1,5 @@
 ESX = nil
-TriggerEvent('esx:getSantaFeObjectnohack', function(obj) ESX = obj end)
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 ItemsPlayerCanBuy = { -- Prevents Exploiting...
   "combomeal",
