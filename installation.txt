@@ -1,0 +1,72 @@
+Installation steps: 
+
+1. Insert one of this two SQL's (Depending of your Es_extended version):
+
+Weight Extended:
+
+INSERT INTO `items` (`name`, `label`, `weight`) VALUES
+	('combomeal', 'Combo Meal', 1),
+	('bigmac', 'Big Mac', 1),
+	('mcpollo', 'McChibken', 1),
+	('mcroyaldeluxe', 'McRoyal Deluxe', 1),
+	('cbo', 'CBO', 1),
+	('cuartodelibra', 'Quarter Pounder', 1),
+	('grandmcextreme', 'Grand McExtreme', 1),
+	('bigchickensupreme', 'Big Chicken Supreme', 1),
+	('bigcrispybbq', 'Big Crispy BBQ', 1),
+	('bigdoublecheese', 'Big Double Cheese', 1),
+	('hamburgesa', 'Burger', 1),
+	('hamburgesadepollo', 'Chicken Burger', 1),
+	('mcfish', 'McFish', 1),
+	('happymeal', 'Happy Meal', 1),
+	('cocacola', 'Coca-Cola', 1),
+	('nestea', 'Nestea', 1),
+	('agua', 'Water', 1),
+	('monsterenergy', 'Monster Energy', 1),
+	('cerveza', 'Beer', 1),
+	('aquarius', 'Aquarius', 1),
+	('sprite', 'Sprite', 1),
+	('colacao', 'Colacao', 1),
+	('nuggets', 'Nuggets', 1),
+	('patatasfritas', 'Chips', 1),
+	('topfries', 'Top Fries', 1),
+	('fanta', 'Fanta', 1)
+;
+
+Limit extended: 
+
+INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
+    ('combomeal', 'Combo Meal', 5, 0, 1),
+	('bigmac', 'Big Mac', 5, 0, 1),
+	('mcpollo', 'McChicken', 5, 0, 1),
+	('mcroyaldeluxe', 'McRoyal Deluxe', 5, 0, 1),
+	('cbo', 'CBO', 5, 0, 1),
+	('cuartodelibra', 'Quarter Pounder', 5, 0, 1),
+	('grandmcextreme', 'Grand McExtreme', 5, 0, 1),
+	('bigchickensupreme', 'Big Chicken Supreme', 5, 0, 1),
+	('bigcrispybbq', 'Big Crispy BBQ', 5, 0, 1),
+	('bigdoublecheese', 'Big Double Cheese', 5, 0, 1),
+	('hamburgesa', 'Burger', 5, 0, 1),
+	('hamburgesadepollo', 'Chicken Burger', 5, 0, 1),
+	('mcfish', 'McFish', 5, 0, 1),
+	('happymeal', 'Happy Meal', 5, 0, 1),
+	('cocacola', 'Coca-Cola', 5, 0, 1),
+	('nestea', 'Nestea', 5, 0, 1),
+	('agua', 'Water', 5, 0, 1),
+	('monsterenergy', 'Monster Energy', 5, 0, 1),
+	('cerveza', 'Beer', 5, 0, 1),
+	('aquarius', 'Aquarius', 5, 0, 1),
+	('sprite', 'Sprite', 5, 0, 1),
+	('colacao', 'Colacao', 5, 0, 1),
+	('nuggets', 'Nuggets', 5, 0, 1),
+	('patatasfritas', 'Chips', 5, 0, 1),
+	('topfries', 'Top Fries', 5, 0, 1),
+	('fanta', 'Fanta', 5, 0, 1)
+;
+
+
+2. If you use esx_inventoryhud, you'll have to add the pictures so the items have a image.
+
+3. Start the Script in the CFG: 
+
+ensure lealtad-mcdonalds
