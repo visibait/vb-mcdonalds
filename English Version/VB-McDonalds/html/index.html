@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VB-MCDONALD's by VisiBait#0712 for the Fivem Forums</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="noselect">
+        <div class="pantallainicio" id="pantalla-inicio">
+            <img class="logo" alt="mcdonalds" src="https://i.imgur.com/ZF3DIwj.png">
+            <img class="espana" alt="espana" src="https://i.imgur.com/Ia1J8Ot.png">
+            <img class="background" alt="bg" src="https://i.imgur.com/2RCSBWN.png">
+            <h1 style="margin-left: 160px; margin-top: 50px; font-size: 45px; font-family: 'Open Sans', sans-serif; margin: 0; position: absolute; top: 30%; color: black; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Choose</b></h1>
+            <button class="botontomaraqui" id="botontomaraqui"></button>
+            <button class="botontomarfuera" id="botontomarfuera"></button>
+        </div>
+        <div class="vb-mcdonalds" id="vb-mcdonalds">
+            <div class="pantallacomprar" id="pantalla-comprar">
+                <img class="logo2" alt="mcdonalds" src="https://i.imgur.com/ZF3DIwj.png"> 
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 30px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 20%; font-weight: bold; color: black; left: 22%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Hey,</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 30px; font-family: 'Open Sans', sans-serif; margin: 0; position: absolute; top: 24%; color: rgb(0, 0, 0); left: 31%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">what's up?</h1>
+                <button class="boton1" id="boton1"></button>
+                <button class="boton2" id="happymealbutton"></button>
+                <button class="boton3" id="nuggetsbutton"></button>
+                <button class="boton4" id="burgers"></button>
+                <button class="boton5" id="bebidasbutton"></button>
+                <button class="boton6" id="patatasbutton"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 30px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 78%; font-weight: bold; color: black; left: 38%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Popular</b></h1>
+                <button class="botonbajo1" id="botonbajo1"></button>
+                <button class="botonbajo2" id="botonbajo2"></button>
+                <button class="botonbajo3" id="botonbajo3"></button>
+            </div>
+            <div class="pantallatupedido" id="pantalla-comprar">
+                <img class="espana2" alt="espana" src="https://i.imgur.com/Ia1J8Ot.png">
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 25px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 20%; font-weight: bold; color: black; left: 35%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Your</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 25px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 23.5%; font-weight: bold; color: black; left: 40%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Order</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 28%; font-weight: bold; color: grey; left: 40%; opacity: 0.75; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Take Out</b></h1>
+                <button class="botonfinish" onclick="menufinalizarpedido()" id="algoaqui">Finalizar Pedido</button>
+            </div>
+            <div class="productospedido" id="productospedido">
+                <div class="burgersclasses" id="combomeal">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/9vzDJlR.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Combo Meal®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 15.79</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="combomealdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="combomealnumber">
+                    <input class="burgeraumentar1" type="button" onclick="combomealincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="bigmac">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/6ngDYDq.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Big Mac®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="bigmacdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigmacnumber">
+                    <input class="burgeraumentar1" type="button" onclick="bigmacincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="mcpollo">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/Id75R89.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">McChicken®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 12.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="mcpollodecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcpollonumber">
+                    <input class="burgeraumentar1" type="button" onclick="mcpolloincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="mcroyaldeluxe">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/MsrXeVH.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">McRoyal Deluxe®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="mcroyaldeluxedecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcroyaldeluxenumber">
+                    <input class="burgeraumentar1" type="button" onclick="mcroyaldeluxeincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="cbo">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/UDIANzs.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">CBO™</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 11.50</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="cbodecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cbonumber">
+                    <input class="burgeraumentar1" type="button" onclick="cboincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="cuartodelibra">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/nqnq1jn.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Quarter Pounder®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.50</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="cuartodelibradecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cuartodelibranumber">
+                    <input class="burgeraumentar1" type="button" onclick="cuartodelibraincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="grandmcextreme">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/YFaUrR2.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Grand McExtreme®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.50</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="grandmcextremedecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="grandmcextremenumber">
+                    <input class="burgeraumentar1" type="button" onclick="grandmcextremeincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="bigchickensupreme">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/CtyXLUj.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Big Chicken Supreme®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 14.50</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="bigchickensupremedecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigchickensupremenumber">
+                    <input class="burgeraumentar1" type="button" onclick="bigchickensupremeincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="bigcrispybbq">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/TX3DdZu.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Big Crispy BBQ®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 11.45</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="bigcrispybbqdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigcrispybbqnumber">
+                    <input class="burgeraumentar1" type="button" onclick="bigcrispybbqincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="bigdoublecheese">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/zhAw290.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Big Double Cheese®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.50</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="bigdoublecheesedecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigdoublecheesenumber">
+                    <input class="burgeraumentar1" type="button" onclick="bigdoublecheeseincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="hamburgesa">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/ZT5SDIU.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Burger®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 7.50</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="hamburgesadecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="hamburgesanumber">
+                    <input class="burgeraumentar1" type="button" onclick="hamburgesaincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="hamburgesadepollo">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/M7aKtmZ.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Chicken Burger®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 8.50</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="hamburgesadepollodecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="hamburgesadepollonumber">
+                    <input class="burgeraumentar1" type="button" onclick="hamburgesadepolloincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="mcfish">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/42P77Tg.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">McFish®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 6.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="mcfishdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcfishnumber">
+                    <input class="burgeraumentar1" type="button" onclick="mcfishincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="happymeal">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/laymUWT.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Happy Meal®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 15.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="happymealdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="happymealnumber">
+                    <input class="burgeraumentar1" type="button" onclick="happymealincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="cocacola">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/YKEJvG2.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Coca-Cola®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 4.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="cocacoladecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cocacolanumber">
+                    <input class="burgeraumentar1" type="button" onclick="cocacolaincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="nestea">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/wPSDbuG.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Nestea®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 5.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="nesteadecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="nesteanumber">
+                    <input class="burgeraumentar1" type="button" onclick="nesteaincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="agua">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/JeNJxZo.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Water®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 3.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="aguadecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="aguanumber">
+                    <input class="burgeraumentar1" type="button" onclick="aguaincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="fanta">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/qUdaEvK.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Fanta®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 4.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="fantadecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="fantanumber">
+                    <input class="burgeraumentar1" type="button" onclick="fantaincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="monsterenergy">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/W13f2fY.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Monster Energy®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 8.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="monsterenergydecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="monsterenergynumber">
+                    <input class="burgeraumentar1" type="button" onclick="monsterenergyincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="cerveza">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/PoyZK4Q.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Beer (+18) ®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="cervezadecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cervezanumber">
+                    <input class="burgeraumentar1" type="button" onclick="cervezaincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="aquarius">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/lCKns6O.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Aquarius®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 7.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="aquariusdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="aquariusnumber">
+                    <input class="burgeraumentar1" type="button" onclick="aquariusincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="sprite">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/tzoCav5.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Sprite®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="spritedecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="spritenumber">
+                    <input class="burgeraumentar1" type="button" onclick="spriteincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="colacao">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/tscc5EH.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">ColaCao®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 12.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="colacaodecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="colacaonumber">
+                    <input class="burgeraumentar1" type="button" onclick="colacaoincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="nuggets">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/JrkPFhY.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Nuggets®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="nuggetsdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="nuggetsnumber">
+                    <input class="burgeraumentar1" type="button" onclick="nuggetsincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="patatas">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/9qDzqYO.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Chips®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="patatasdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="patatasnumber">
+                    <input class="burgeraumentar1" type="button" onclick="patatasincrementValue()" value="">
+                </div>
+                <div class="burgersclasses" id="topfries">
+                    <img class="burgerimage" alt="burger" src="https://i.imgur.com/sClKnWi.png">
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');}margin: 0; position: absolute; top: 50%; font-weight: bold; color: black; left: 55%; opacity: 0.95; transform: translate(-50%, -50%);">Top Fries®</h1>
+                    <h1 style="font-size: 15px; @font-face{font-family: Roboto; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');}margin: 0; position: absolute; top: 70%; color: black; font-weight: bolder; left: 50%; opacity: 0.95; transform: translate(-50%, -50%);">$ 14.99</h1>
+                    <input class="burgerdisminuir1" type="button" onclick="topfriesdecrementValue()" value="">
+                    <input class="burgercantidad1" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="topfriesnumber">
+                    <input class="burgeraumentar1" type="button" onclick="topfriesincrementValue()" value="">
+                </div>
+            </div>
+            <div class="mcdonalds-preview" id="mcdonalds-preview">
+                <button class="botoncerrarmenu" id="cerrarmenu"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>15.79$</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/EpLEoDb.jpg">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/EAw3Q5B.png">
+                <input class="botondisminuir" type="button" onclick="decrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number">
+                <input class="aumentarcantidad" type="button" onclick="incrementValue()" value="">
+                <button class="botondoneburgers" id="donecombomeal"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewbigmac"> <!-- Start -->
+                <button class="botoncerrarmenu" id="cerrarmenubigmac"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 10.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/XNeetL4.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/qUoFPxo.png">
+                <input class="botondisminuir" type="button" onclick="bigmacdecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigmacnumber2">
+                <input class="aumentarcantidad" type="button" onclick="bigmacincrementValue()" value="">
+                <button class="botondoneburgers" id="donebigmac"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewmcpollo">
+                <button class="botoncerrarmenu" id="cerrarmenumcpollo"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 12.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/CksZP3O.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/RpILw6q.png">
+                <input class="botondisminuir" type="button" onclick="mcpollodecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcpollonumber2">
+                <input class="aumentarcantidad" type="button" onclick="mcpolloincrementValue()" value="">
+                <button class="botondoneburgers" id="donemcpollo"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewmcroyaldeluxe">
+                <button class="botoncerrarmenu" id="cerrarmenumcroyaldeluxe"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 9.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/dzM8ep7.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/iA6cP24.png">
+                <input class="botondisminuir" type="button" onclick="mcroyaldeluxedecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcroyaldeluxenumber2">
+                <input class="aumentarcantidad" type="button" onclick="mcroyaldeluxeincrementValue()" value="">
+                <button class="botondoneburgers" id="donemcroyaldeluxe"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewcbo">
+                <button class="botoncerrarmenu" id="cerrarmenucbo"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 11.50</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/OgrfAVq.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/Eo6tBRd.png">
+                <input class="botondisminuir" type="button" onclick="cbodecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cbonumber2" />
+                <input class="aumentarcantidad" type="button" onclick="cboincrementValue()" value="">
+                <button class="botondoneburgers" id="donecbo"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewcuartodelibra">
+                <button class="botoncerrarmenu" id="cerrarmenucuartodelibra"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 9.50</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/djn5ZIt.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/iM29eot.png">
+                <input class="botondisminuir" type="button" onclick="cuartodelibradecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cuartodelibranumber2">
+                <input class="aumentarcantidad" type="button" onclick="cuartodelibraincrementValue()" value="">
+                <button class="botondoneburgers" id="donecuartodelibra"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewgrandmcextreme">
+                <button class="botoncerrarmenu" id="cerrarmenugrandmcextreme"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 9.50</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/EvwLwRl.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/OwVMgJP.png">
+                <input class="botondisminuir" type="button" onclick="grandmcextremedecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="grandmcextremenumber2">
+                <input class="aumentarcantidad" type="button" onclick="grandmcextremeincrementValue()" value="">
+                <button class="botondoneburgers" id="donegrandmcextreme"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewbigchickensupreme">
+                <button class="botoncerrarmenu" id="cerrarmenubigchickensupreme"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 14.50</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/Ke17ZwF.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/XJpBciF.png">
+                <input class="botondisminuir" type="button" onclick="bigchickensupremedecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigchickensupremenumber2">
+                <input class="aumentarcantidad" type="button" onclick="bigchickensupremeincrementValue()" value="">
+                <button class="botondoneburgers" id="donebigchickensupreme"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewbigcrispybbq">
+                <button class="botoncerrarmenu" id="cerrarmenubigcrispybbq"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 11.45</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/MEcXaSS.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/MMAdHjK.png">
+                <input class="botondisminuir" type="button" onclick="bigcrispybbqdecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigcrispybbqnumber2">
+                <input class="aumentarcantidad" type="button" onclick="bigcrispybbqincrementValue()" value="">
+                <button class="botondoneburgers" id="donebigcrispybbq"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewbigdoublecheese">
+                <button class="botoncerrarmenu" id="cerrarmenubigdoublecheese"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 10.50</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/oaonxps.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/KHSp3Y9.png">
+                <input class="botondisminuir" type="button" onclick="bigdoublecheesedecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigdoublecheesenumber2">
+                <input class="aumentarcantidad" type="button" onclick="bigdoublecheeseincrementValue()" value="">
+                <button class="botondoneburgers" id="donebigdoublecheese"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewhamburgesa">
+                <button class="botoncerrarmenu" id="cerrarmenuhamburgesa"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 7.50</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/ivjFZi8.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/zkCdcc5.png">
+                <input class="botondisminuir" type="button" onclick="hamburgesadecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="hamburgesanumber2">
+                <input class="aumentarcantidad" type="button" onclick="hamburgesaincrementValue()" value="">
+                <button class="botondoneburgers" id="donehamburgesa"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewhamburgesadepollo">
+                <button class="botoncerrarmenu" id="cerrarmenuhamburgesadepollo"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 8.50</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/ECTwcmJ.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/2HEr9cT.png">
+                <input class="botondisminuir" type="button" onclick="hamburgesadepollodecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="hamburgesadepollonumber2">
+                <input class="aumentarcantidad" type="button" onclick="hamburgesadepolloincrementValue()" value="">
+                <button class="botondoneburgers" id="donehamburgesadepollo"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewmcfish">
+                <button class="botoncerrarmenu" id="cerrarmenumcfish"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 6.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/Sc3VVRZ.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/LnH4ulh.png">
+                <input class="botondisminuir" type="button" onclick="mcfishdecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcfishnumber2">
+                <input class="aumentarcantidad" type="button" onclick="mcfishincrementValue()" value="">
+                <button class="botondoneburgers" id="donemcfish"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-personalizar" id="mcdonalds-personalizar">
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 10px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 36%; font-weight: bold; color: grey; left: 50%; opacity: 0.80; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>1050 Cal.</b></h1>
+                <img class="logocombomeal2" alt="logocombomeal2" src="https://i.imgur.com/EpLEoDb.jpg">
+                <img class="logotextocombomeal2" alt="logotextocombomeal2" src="https://i.imgur.com/EAw3Q5B.png">
+                <img class="logopan" alt="logotextocombomeal2" src="https://i.imgur.com/Jkoj9GY.png">
+                <img class="logocarne" alt="logotextocombomeal2" src="https://i.imgur.com/iko8yDy.png">
+                <img class="logolechuga" alt="logotextocombomeal2" src="https://i.imgur.com/ylkBIlc.png">
+                <img class="logoqueso" alt="logotextocombomeal2" src="https://i.imgur.com/C6DRRO1.png">
+                <img class="logopepino" alt="logotextocombomeal2" src="https://i.imgur.com/9yywJmG.png">
+                <img class="logoketchup" alt="logotextocombomeal2" src="https://i.imgur.com/FOtXU4D.png">
+                <button class="botonhechopersonalizar" id="botonhechopersonalizar"></button>
+                <button class="botoncerrarmenu" id="cerrarmenu"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 40%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 15.79</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 45%; font-weight: bold; color: black; left: 35%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Pan</b> </h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 52%; font-weight: bold; color: black; left: 35%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Carne</b> </h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 59%; font-weight: bold; color: black; left: 35%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"> <b>Lechuga</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 67%; font-weight: bold; color: black; left: 35%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Queso</b> </h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 74%; font-weight: bold; color: black; left: 35%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"> <b>Pepino</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 83%; font-weight: bold; color: black; left: 35%; opacity: 0.90; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"> <b>Ketchup</b></h1>
+                <button class="botonatras" id="iratras"></button>
+                <input class="botondisminuir2" type="button" onclick="decrementValue2()" value="">
+                <input class="cantidad2" type="text" name="quantity" value="1" maxlength="2" max="3" size="1" id="number2">
+                <input class="aumentarcantidad2" type="button" onclick="incrementValue2()" value="">
+                <input class="botondisminuir3" type="button" onclick="decrementValue3()" value="">
+                <input class="cantidad3" type="text" name="quantity" value="1" maxlength="2" max="2" size="1" id="number3">
+                <input class="aumentarcantidad3" type="button" onclick="incrementValue3()" value="">
+                <input class="botondisminuir4" type="button" onclick="decrementValue4()" value="">
+                <input class="cantidad4" type="text" name="quantity" value="1" maxlength="2" max="5" size="1" id="number4">
+                <input class="aumentarcantidad4" type="button" onclick="incrementValue4()" value="">
+                <input class="botondisminuir5" type="button" onclick="decrementValue5()" value="">
+                <input class="cantidad5" type="text" name="quantity" value="1" maxlength="2" max="5" size="1" id="number5">
+                <input class="aumentarcantidad5" type="button" onclick="incrementValue5()" value="">
+                <input class="botondisminuir6" type="button" onclick="decrementValue6()" value="">
+                <input class="cantidad6" type="text" name="quantity" value="1" maxlength="2" max="5" size="1" id="number6">
+                <input class="aumentarcantidad6" type="button" onclick="incrementValue6()" value="">
+            </div>
+            <div class="mcdonalds-preview2" id="mcdonalds-preview2">
+                <button class="botoncerrarmenu2" id="cerrarmenu2"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 43%; font-weight: bold; color:rgb(255, 200, 56); left: 21.5%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 5.39</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 43%; font-weight: bold; color:rgb(255, 200, 56); left: 49%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 7.89</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 43%; font-weight: bold; color:rgb(255, 200, 56); left: 79%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 6.79</b></h1>
+                <button class="logopatatasmini" id="algoaqui"></button>
+                <button class="logotopfriesbig" id="algoaqui"> </button>
+                <button class="logopatatasnormales" id="algoaqui"></button>
+                <img class="logopequeñas" alt="logopequeñas" src="https://i.imgur.com/yRdS8Et.png">
+                <img class="logotopfries" alt="logotopfries" id="menutopfries"
+                    src="https://i.imgur.com/g1L9GJU.png">
+                <img class="logonormales" alt="logonormales" src="https://i.imgur.com/j2UgNVP.png">
+                <img class="logopatatas" alt="logopatatas" src="https://i.imgur.com/NPPbVGE.png">
+                <input class="botondisminuir7" type="button" onclick="patatasdecrementValue()" value="">
+                <input class="cantidad7" type="text" name="quantity" value="1" maxlength="2" max="5" size="1" id="patatasnumber2">
+                <input class="aumentarcantidad7" type="button" onclick="patatasincrementValue()" value="">
+                <div class="mcdonalds-preview2salsa" id="mcdonalds-preview2salsa">
+                    <img class="logoeligesalsa" alt="logoeligesalsa" src="https://i.imgur.com/ztTapFn.png">
+                    <button class="logosalsaketchup" id="algoaqui"></button>
+                    <button class="logosalsamostaza" id="algoaqui"> </button>
+                    <button class="logosalsabarbacoa" id="algoaqui"></button>
+                </div>
+                <div class="mcdonalds-preview2finalizar" id="mcdonalds-preview2finalizar">
+                    <button class="botondone2" id="botondonepatatas"></button>
+                </div>
+            </div>
+            <div class="mcdonalds-bebidas" id="mcdonalds-bebidas">
+                <img class="logobebidas" alt="logobebidas" src="https://i.imgur.com/dvQKsqa.png">
+                <button class="botoncerrarmenu3" id="cerrarmenu3"></button>
+                <button class="botonbebidas1" id="opencocacola"></button>
+                <button class="botonbebidas2" id="openfanta"></button>
+                <button class="botonbebidas3" id="openaquarius"></button>
+                <button class="botonbebidas4" id="opennestea"></button>
+                <button class="botonbebidas5" id="openmonsterenergy"></button>
+                <button class="botonbebidas6" id="opensprite"></button>
+                <button class="botonbebidas7" id="openagua"></button>
+                <button class="botonbebidas8" id="opencerveza"></button>
+                <button class="botonbebidas9" id="opencolacao"></button>
+                <button class="botondonemenubebidas" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewcocacola">
+                <button class="botoncerrarmenu" id="cerrarmenucocacola"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 4.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/ZSrpmTV.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/eogcF1Y.png">
+                <input class="botondisminuir" type="button" onclick="cocacoladecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cocacolanumber2">
+                <input class="aumentarcantidad" type="button" onclick="cocacolaincrementValue()" value="">
+                <button class="botondoneburgers" id="donecocacola"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewfanta">
+                <button class="botoncerrarmenu" id="cerrarmenufanta"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 4.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/MFyUrOc.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/VVIk9bD.png">
+                <input class="botondisminuir" type="button" onclick="fantadecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="fantanumber2">
+                <input class="aumentarcantidad" type="button" onclick="fantaincrementValue()" value="">
+                <button class="botondoneburgers" id="donefanta"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewaquarius">
+                <button class="botoncerrarmenu" id="cerrarmenuaquarius"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 7.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/CDSBFCf.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/LoMtIg6.png">
+                <input class="botondisminuir" type="button" onclick="aquariusdecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="aquariusnumber2">
+                <input class="aumentarcantidad" type="button" onclick="aquariusincrementValue()" value="">
+                <button class="botondoneburgers" id="doneaquarius"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewnestea">
+                <button class="botoncerrarmenu" id="cerrarmenunestea"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 5.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/b72jHOb.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/NwZE8nf.png">
+                <input class="botondisminuir" type="button" onclick="nesteadecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="nesteanumber2">
+                <input class="aumentarcantidad" type="button" onclick="nesteaincrementValue()" value="">
+                <button class="botondoneburgers" id="donenestea"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewmonsterenergy">
+                <button class="botoncerrarmenu" id="cerrarmenumonsterenergy"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 8.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/2pRqwTU.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/yW9LhfQ.png">
+                <input class="botondisminuir" type="button" onclick="monsterenergydecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="monsterenergynumber2">
+                <input class="aumentarcantidad" type="button" onclick="monsterenergyincrementValue()" value="">
+                <button class="botondoneburgers" id="donemonsterenergy"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewsprite">
+                <button class="botoncerrarmenu" id="cerrarmenusprite"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 9.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/hC1iMcp.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/kc4ScNH.png">
+                <input class="botondisminuir" type="button" onclick="spritedecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="spritenumber2">
+                <input class="aumentarcantidad" type="button" onclick="spriteincrementValue()" value="">
+                <button class="botondoneburgers" id="donesprite"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewagua">
+                <button class="botoncerrarmenu" id="cerrarmenuagua"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 3.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/dGHwEn2.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/aasmimt.png">
+                <input class="botondisminuir" type="button" onclick="aguadecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="aguanumber2">
+                <input class="aumentarcantidad" type="button" onclick="aguaincrementValue()" value="">
+                <button class="botondoneburgers" id="doneagua"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewcerveza">
+                <button class="botoncerrarmenu" id="cerrarmenucerveza"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 10.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/tIj6g39.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/KnPrq8k.png">
+                <input class="botondisminuir" type="button" onclick="cervezadecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cervezanumber2">
+                <input class="aumentarcantidad" type="button" onclick="cervezaincrementValue()" value="">
+                <button class="botondoneburgers" id="donecerveza"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-burgerspreview" id="mcdonalds-previewcolacao">
+                <button class="botoncerrarmenu" id="cerrarmenucolacao"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 20px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 49%; font-weight: bold; color:rgb(255, 200, 56); left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 12.99</b></h1>
+                <img class="logocombomeal" alt="logocombomeal" src="https://i.imgur.com/8lPyg9Z.png">
+                <img class="logotextocombomeal" alt="logotextocombomeal" src="https://i.imgur.com/SHxwJwT.png">
+                <input class="botondisminuir" type="button" onclick="colacaodecrementValue()" value="">
+                <input class="cantidad" type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="colacaonumber2">
+                <input class="aumentarcantidad" type="button" onclick="colacaoincrementValue()" value="">
+                <button class="botondoneburgers" id="donecolacao"></button>
+                <button class="botonfastcompra" id="algoaqui"></button>
+            </div>
+            <div class="mcdonalds-nuggets" id="mcdonalds-nuggets">
+                <button class="botoncerrarmenu4" id="cerrarmenu4"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 43%; font-weight: bold; color:rgb(255, 200, 56); left: 21.5%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 4.39</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 43%; font-weight: bold; color:rgb(255, 200, 56); left: 49%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 9.89</b></h1>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 43%; font-weight: bold; color:rgb(255, 200, 56); left: 79%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>$ 6.79</b></h1>
+                <button class="logonuggetsmini" id="logonuggetsmini"></button>
+                <button class="logonuggetsbig" id="algoaqui"> </button>
+                <button class="logonuggets4" id="algoaqui"></button>
+                <img class="logopequeñas" alt="logopequeñas" src="https://i.imgur.com/BRyS6BL.png">
+                <img class="logotopfries" alt="logograndes" src="https://i.imgur.com/M81e1uC.png">
+                <img class="logonormales" alt="logonormales" src="https://i.imgur.com/kzbkpjl.png">
+                <img class="logopatatas" alt="logopatatas" src="https://i.imgur.com/IJemFM3.png">
+                <input class="botondisminuir7" type="button" onclick="nuggetsdecrementValue()" value="">
+                <input class="cantidad7" type="text" name="quantity" value="1" maxlength="2" max="5" size="1" id="nuggetsnumber2">
+                <input class="aumentarcantidad7" type="button" onclick="nuggetsincrementValue()" value="">
+                <div class="mcdonalds-preview2salsa" id="mcdonalds-preview2salsa">
+                    <img class="logoeligesalsa" alt="logoeligesalsa" src="https://i.imgur.com/ztTapFn.png">
+                    <button class="logosalsaketchup" id="algoaqui"></button>
+                    <button class="logosalsamostaza" id="algoaqui"> </button>
+                    <button class="logosalsabarbacoa" id="algoaqui"></button>
+                </div>
+                <div class="mcdonalds-preview2finalizar" id="mcdonalds-preview2finalizar">
+                    <button class="botondone2" id="botondonenuggets"></button>
+                </div>
+            </div>
+            <div class="mcdonalds-burgers" id="mcdonalds-burgers">
+                <img class="logobebidas" alt="logobebidas" src="https://i.imgur.com/NM4UIXa.png">
+                <button class="botonburgers1" id="openbigmac"></button>
+                <button class="botonburgers2" id="opencbo"></button>
+                <button class="botonburgers3" id="openbigchickensupreme"></button>
+                <button class="botonburgers4" id="openmcpollo"></button>
+                <button class="botonburgers5" id="opencuartodelibra"></button>
+                <button class="botonburgers6" id="openbigcrispybbq"></button>
+                <button class="botonburgers7" id="openmcroyaldeluxe"></button>
+                <button class="botonburgers8" id="opengrandmcextreme"></button>
+                <button class="botonburgers9" id="openbigdoublecheese"></button>
+                <button class="botonburgers10" id="openmcfish"></button>
+                <button class="botonburgers11" id="openhamburgesadepollo"></button>
+                <button class="botonburgers12" id="openhamburgesa"></button>
+                <button class="botondonemenuburgers" id="botondone2"></button>
+            </div>
+            <div class="mcdonalds-happymeal" id="mcdonalds-happymeal">
+                <img class="logobebidas" alt="logobebidas" src="https://i.imgur.com/lS1GLYB.png">
+                <img class="logohamburgesa" alt="logobebidas" src="https://i.imgur.com/NM4UIXa.png">
+                <img class="logocomplemento" alt="logobebidas" src="https://i.imgur.com/rFt0EMT.png">
+                <img class="logopostre" alt="logobebidas" src="https://i.imgur.com/h2V7fT0.png">
+                <button class="botoncerrarmenu6" id="cerrarmenu6"></button>
+                <button class="botonhappy1" id="botonhappy1" onclick="cambiarcolorboton1()"></button>
+                <button class="botonhappy2" id="botonhappy2" onclick="cambiarcolorboton2()"></button>
+                <button class="botonhappy3" id="botonhappy3" onclick="cambiarcolorboton3()"></button>
+                <button class="botonhappy4" id="botonhappy4" onclick="cambiarcolorboton4()"></button>
+                <button class="botonhappy5" id="botonhappy5" onclick="cambiarcolorboton5()"></button>
+                <button class="botonhappy6" id="botonhappy6" onclick="cambiarcolorboton6()"></button>
+                <button class="botonhappy7" id="botonhappy7" onclick="cambiarcolorboton7()"></button>
+                <button class="botonhappy8" id="botonhappy8" onclick="cambiarcolorboton8()"></button>
+                <button class="botonhappy9" id="botonhappy9" onclick="cambiarcolorboton9()"></button>
+                <button class="botondonemenuhappymeal" id="donehappymeal"></button>
+            </div>
+            <div class="mcdonaldsendpedido" id="mcdonaldsendpedido">
+                <img class="logomcdonaldsfinal" alt="logomcdonaldsfinal" src="https://i.imgur.com/0qqT4st.png">
+                <img class="espanafinal" alt="espana" src="https://i.imgur.com/Ia1J8Ot.png">
+                <img class="tupedidofinal" alt="espana" src="https://i.imgur.com/zmu9Mvz.png">
+                <button class="botonvolveratras" id="botonvolveratras"></button>
+                <button class="finalizarpedido" onclick="finalizarpedido()" id="finalizarpedido"></button>
+                <h1 style="margin-left: 160px; margin-top: 50px; font-size: 17px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 87%; color:rgb(211, 211, 211); left: 27.5%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"><b>Total</b></h1>
+                <h1 id=totalpedido style="margin-left: 160px; margin-top: 50px; font-size: 30px; font-family: 'Arial-black', sans-serif;margin: 0;position: absolute;top: 92%;color:white;left: 30.5%;font-weight: bolder;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);"><b>$ 0.00</b></h1>
+                <div class="divendpedido" id="divendpedido">
+                    <div class="productosfinal" id="combomealfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/9vzDJlR.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 37%; opacity: 0.95; transform: translate(-50%, -50%);">Combo Meal®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 15.79</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="combomealdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="combomealnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="combomealincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="bigmacfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/6ngDYDq.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 32%; opacity: 0.95; transform: translate(-50%, -50%);">Big Mac®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="bigmacdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigmacnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="bigmacincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="mcpollofinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/Id75R89.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 32%; opacity: 0.95; transform: translate(-50%, -50%);">McChicken®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 12.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="mcpollodecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcpollonumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="mcpolloincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="mcroyaldeluxefinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/MsrXeVH.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 40%; opacity: 0.95; transform: translate(-50%, -50%);">McRoyal Deluxe®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="mcroyaldeluxedecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcroyaldeluxenumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="mcroyaldeluxeincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="cbofinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/UDIANzs.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 30%; opacity: 0.95; transform: translate(-50%, -50%);">CBO™</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 11.50</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="cbodecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cbonumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="cboincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="cuartodelibrafinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/nqnq1jn.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 40%; opacity: 0.95; transform: translate(-50%, -50%);">Quarter Pounder®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.50</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="cuartodelibradecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cuartodelibranumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="cuartodelibraincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="grandmcextremefinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/YFaUrR2.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 43%; opacity: 0.95; transform: translate(-50%, -50%);">Grand McExtreme®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.50</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="grandmcextremedecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="grandmcextremenumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="grandmcextremeincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="bigchickensupremefinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/CtyXLUj.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 47%; opacity: 0.95; transform: translate(-50%, -50%);">Big Chicken Supreme®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 14.50</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="bigchickensupremedecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigchickensupremenumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="bigchickensupremeincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="bigcrispybbqfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/TX3DdZu.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 40%; opacity: 0.95; transform: translate(-50%, -50%);">Big Crispy BBQ®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 11.45</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="bigcrispybbqdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigcrispybbqnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="bigcrispybbqincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="bigdoublecheesefinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/zhAw290.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 43%; opacity: 0.95; transform: translate(-50%, -50%);">Big Double Cheese®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.50</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="bigdoublecheesedecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="bigdoublecheesenumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="bigdoublecheeseincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="hamburgesafinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/ZT5SDIU.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 38%; opacity: 0.95; transform: translate(-50%, -50%);">Burger®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 7.50</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="hamburgesadecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="hamburgesanumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="hamburgesaincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="hamburgesadepollofinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/M7aKtmZ.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 38%; opacity: 0.95; transform: translate(-50%, -50%);">Burger®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 8.50</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="hamburgesadepollodecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="hamburgesadepollonumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="hamburgesadepolloincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="mcfishfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/42P77Tg.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 32%; opacity: 0.95; transform: translate(-50%, -50%);">McFish®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 6.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="mcfishdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="mcfishnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="mcfishincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="happymealfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/laymUWT.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 36%; opacity: 0.95; transform: translate(-50%, -50%);">Happy Meal®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 15.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="happymealdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="happymealnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="happymealincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="cocacolafinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/YKEJvG2.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 36%; opacity: 0.95; transform: translate(-50%, -50%);">Coca-Cola®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 4.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="cocacoladecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cocacolanumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="cocacolaincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="nesteafinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/wPSDbuG.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 32%; opacity: 0.95; transform: translate(-50%, -50%);">Nestea®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 5.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="nesteadecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="nesteanumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="nesteaincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="aguafinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/JeNJxZo.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 30%; opacity: 0.95; transform: translate(-50%, -50%);">Water®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 3.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="aguadecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="aguanumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="aguaincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="fantafinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/qUdaEvK.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 30%; opacity: 0.95; transform: translate(-50%, -50%);">Fanta®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 4.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="fantadecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="fantanumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="fantaincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="monsterenergyfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/W13f2fY.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 40%; opacity: 0.95; transform: translate(-50%, -50%);">Monster Energy®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 8.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="monsterenergydecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="monsterenergynumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="monsterenergyincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="cervezafinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/PoyZK4Q.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 38%; opacity: 0.95; transform: translate(-50%, -50%);">Beer (+18) ®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="cervezadecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="cervezanumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="cervezaincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="aquariusfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/lCKns6O.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 33%; opacity: 0.95; transform: translate(-50%, -50%);">Aquarius®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 7.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="aquariusdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="aquariusnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="aquariusincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="spritefinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/tzoCav5.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 30%; opacity: 0.95; transform: translate(-50%, -50%);">Sprite®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="spritedecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="spritenumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="spriteincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="colacaofinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/tscc5EH.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 33%; opacity: 0.95; transform: translate(-50%, -50%);">ColaCao®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 12.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="colacaodecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="colacaonumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="colacaoincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="nuggetsfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/JrkPFhY.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 33%; opacity: 0.95; transform: translate(-50%, -50%);">Nuggets®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 10.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="nuggetsdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="nuggetsnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="nuggetsincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="patatasfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/9qDzqYO.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 38%; opacity: 0.95; transform: translate(-50%, -50%);">Chips®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 9.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="patatasdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="patatasnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="patatasincrementValue()" value="">
+                    </div>
+                    <div class="productosfinal" id="topfriesfinal">
+                        <img class="burgerimagefinalizarpedido" alt="burger" src="https://i.imgur.com/sClKnWi.png">
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 35%; font-weight: bold; color: white; left: 33%; opacity: 0.95; transform: translate(-50%, -50%);">Top Fries®</h1>
+                        <h1 style="margin-left: 160px; margin-top: 50px; font-size: 15px; font-family: 'Arial-black', sans-serif; margin: 0; position: absolute; top: 60%; color: white; font-weight: bolder; left: 29%; opacity: 0.95; transform: translate(-50%, -50%);">$ 14.99</h1>
+                        <input class="burgerdisminuir1finalizarpedido" type="button" onclick="topfriesdecrementValue()" value="">
+                        <input class="burgercantidad1finalizarpedido" 1 type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="topfriesnumberfinal">
+                        <input class="burgeraumentar1finalizarpedido" type="button" onclick="topfriesincrementValue()" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
