@@ -1,8 +1,8 @@
 # VB-McDonald's: McDonald's script by VisiBait#0712
  
-## Sobre el Proyecto - Preview
+## About the Project - Preview
 
-https://streamable.com/azkpl4
+https://streamable.com/mcsexy
 
 ## Features
 
