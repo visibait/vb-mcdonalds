@@ -1,5 +1,5 @@
 ESX = nil
-TriggerEvent('esx:getSantaFeObjectnohack', function(obj) ESX = obj end)
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 ItemsPlayerCanBuy = { -- Prevents Exploiting...
   "combomeal",
@@ -53,6 +53,6 @@ AddEventHandler('vb-mcdonalds:realizarpedido', function(data)
         -- ADD YOUR NOTIFICATIONS RIGHT HERE!
       end
     else
-      DropPlayer(_src, "Player has triggered a VB-McDonald's event to purchase an item that isn't on the valid item list!")
+      DropPlayer(_src, "El jugador ha llamado a un evento del VB-McDonald's para comprar un item que no está en la lista whitelisteado!")
     end
 end)
