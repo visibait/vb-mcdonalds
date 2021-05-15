@@ -12,7 +12,7 @@ Citizen.CreateThread(function()
 			local dist = #((Config.Zones[i]) - vector3(_pos))
 			if dist < 10 then
 				_sleep = false
-				DrawText3D(Config.Zones[i], "~g~E~s~ - Para abrir el McDonald's")
+				DrawText3D(Config.Zones[i], "~g~E~s~ - To Open McDonald's")
 				if dist < 3 then
 					if IsControlJustPressed(0, 38) then
 						open(true)
@@ -29,7 +29,6 @@ end)
 --
 
 RegisterNUICallback("realizarpedido", function(data)
-    print(data.item.. " : " ..data.amount.. ": $ " ..data.price)
     TriggerServerEvent('vb-mcdonalds:realizarpedido', data)
 end)
 

@@ -1814,9 +1814,13 @@ function sumaTotal() { //hace la suma del total.
     var cantidadtopfries = parseInt(document.getElementById('topfriesnumber').value, 10); 
     total = preciotopfries * cantidadtopfries + total; 
   }
-  console.log("Total del Pedido:", total, "$");
   document.getElementById("totalpedido").innerHTML = "$";
-  document.getElementById("totalpedido").innerHTML += total;
+  if (total.toString().length >= 6) {
+    document.getElementById("totalpedido").innerHTML += Math.trunc(total);
+  } else {
+    document.getElementById("totalpedido").innerHTML += total;
+  }
+  console.log("Total del Pedido:", total, "$");
 }
 
 function menufinalizarpedido() {
