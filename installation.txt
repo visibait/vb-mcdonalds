@@ -389,4 +389,4 @@ end)
 
 3. Start the Script in the CFG: 
 
-ensure lealtad-mcdonalds
+ensure vb-mcdonalds
