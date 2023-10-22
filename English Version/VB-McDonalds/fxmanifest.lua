@@ -21,3 +21,4 @@ files {
     'html/css/*.css',
     'html/js/*.js',
 }
+shared_script '@es_extended/imports.lua'
